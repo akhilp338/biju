@@ -1,0 +1,55 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Inspection List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+
+
+            <th>ProjectId</th>
+            <th>purchaseOrderNumber</th>
+            <th>reportNumber</th>
+            <th>sequenceNumber</th>
+            <th>equipment</th>
+            <th>tagNumber</th>
+            <th>dateRaised</th>
+            <th>plannedCompletionDate</th>
+            <th>description</th>
+            <th>photos</th>
+            <th>actionBy</th>
+            <th>punchPointCategory</th>
+            <th>openClose</th>
+            <th>closureEvidence</th>
+            <th> Comments</th>
+            <th>Actions</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inspection of inspection | async">
+            <td>{{inspection.ProjectId}}</td>
+            <td>{{inspection.purchaseOrderNumber}}</td>
+            <td>{{inspection.reportNumber}}</td>
+            <td>{{inspection.sequenceNumber}}</td>
+            <td>{{inspection.equipment}}</td>
+            <td>{{inspection.tagNumber}}</td>
+            <td>{{inspection.dateRaised}}</td>
+            <td>{{inspection.plannedCompletionDate}}</td>
+            <td>{{inspection.description}}</td>
+            <td>{{inspection.photos}}</td>
+            <td>{{inspection.actionBy}}</td>
+            <td>{{inspection.punchPointCategory}}</td>
+            <td>{{inspection.openClose}}</td>
+            <td>{{inspection.closureEvidence}}</td>
+            <td>{{inspection. Comments}}</td>
+            <td><button (click)="deleteInspection(inspection.ProjectId)" class="btn btn-danger">Delete</button>
+                <button (click)="employeeDetails(inspection.ProjectId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
